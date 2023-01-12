@@ -6,16 +6,32 @@
   <title>Adam Kowalski - Web Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Saira+Condensed:400,700|Saira:300,400&amp;subset=latin-ext" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/94de2e002b.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+  <nav>
+    <div class="burger">
+      <i id="burger" class="fa-solid fa-bars active"></i>
+      <i id="close" class="fa-solid fa-xmark"></i>
+    </div>
+    <div id="wrapper">
+      <ul>
+        <li id="welcome">Home</li>
+        <li id="features">Praca</li>
+        <li id="portfolio">Projekty</li>
+        <li id="slogan">Motto</li>
+        <li id="hobby">Hobby</li>
+        <li id="contact">Kontakt</li>
+      </ul>
+    </div>
+  </nav>
   <header>
     <div class="welcome">
       <p>witaj!</p>
-      <h1>jestem Adam Kowalski</h1>
+      <h1>jestem Adam Nowak</h1>
       <h2>web developer - freelancer</h2>
-      <button>Zobacz moje portfolio</button>
+      <button id="goToPortfolioBtn">Zobacz moje portfolio</button>
     </div>
     <img src="images/photo1.png" alt="Zdjęcie Adam Kowalski">
   </header>
@@ -33,10 +49,9 @@
     </div>
     <div class="feature">
       <img src="images/services3.png" alt="loga html js i css">
-      <h2>Świetnie wyglądające na urzedziach mobilnych</h2>
+      <h2>Świetnie wyglądające na urządzeniach mobilnych</h2>
       <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum earum maiores dolores fugit, soluta? Sed repudiandae, fugit provident suscipit cum architecto asperiores, sequi obcaecati, alias sunt ea. Soluta, rerum, perspiciatis.</p>
     </div>
-
   </section>
   <section class="portfolio">
     <h1>Projekty, z których jestem dumny</h1>
@@ -84,7 +99,6 @@
       <p class="author">Jan Nowak</p>
     </div>
   </section>
-
   <section class="hobby clearfix">
     <h1>W wolnym czasie uwielbiam</h1>
     <div class="item">
@@ -100,11 +114,9 @@
       <p>Jeść owoce i warzywa</p>
     </div>
   </section>
-
   <section class="contact">
     <h1>Skontaktuj się ze mną</h1>
     <div class="wrap clearfix">
-
       <form>
         <input type="text" placeholder="Twoje imię">
         <input type="text" placeholder="Email">
@@ -117,15 +129,14 @@
         <div class="social clearfix"><img src="images/contact3.png" alt="kontakt"><span>adamnowak</span></div>
         <div class="social clearfix"><img src="images/contact4.png" alt="kontakt"><span>@adamnowak</span></div>
         <div class="social clearfix"><img src="images/contact5.png" alt="kontakt"><span>adamnowak</span></div>
-
       </div>
-
     </div>
-
-
   </section>
-
   <footer>&copy; Adam Nowak</footer>
+  <div id="arrow">
+    <i class="fa-solid fa-arrow-up"></i>
+  </div>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/index.js"></script>
 </body>
-
 </html>

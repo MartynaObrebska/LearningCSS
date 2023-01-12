@@ -8,8 +8,77 @@
   display: block;
   clear: both;
 }
+nav {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #29a6dc;
+}
+nav.active {
+  background-color: black;
+}
+nav div.burger{
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  font-size: 30px;
+  color: white;
+  line-height: 50px;
+}
+nav i.fa-solid{
+  display: none;
+  position: absolute;
+  width: 50px;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  text-align: center;
+  cursor: pointer;
+}
+nav i.fa-solid.active{
+  display: block;
+}
+nav div#wrapper{
+  z-index: 2;
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: inherit;
+}
+nav div#wrapper.active{
+  display: block;
+  bottom: auto;
+  top: 50px;
+  border-bottom: 1px solid white;
+}
+nav li{
+  display: block;
+  font-family: 'Saira Condensed', sans-serif;
+  color: white;
+  font-size: 40px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+nav li:hover{
+  background-color: #fff;
+  color: #000;
+}
+@media (max-width: 768px){
+  nav li{
+    font-size: 24px;
+  }
+}
 header {
   position: relative;
+  top: 50px;
   background-color: #29a6dc;
   height: 100vh;
   overflow: hidden;
@@ -45,7 +114,7 @@ header h2 {
   font-size: 20px;
   font-weight: normal;
 }
-header button {
+header #goToPortfolioBtn {
   font-family: 'Saira', sans-serif;
   font-weight: 300;
   line-height: 32px;
@@ -55,6 +124,14 @@ header button {
   background-color: transparent;
   font-size: 12px;
   border: 2px solid white;
+  cursor: pointer;
+  transition: .2s;
+}
+
+header #goToPortfolioBtn:hover {
+  font-weight: 600;
+  background-color: #fff;
+  color: #29a6dc; 
 }
 
 @media (orientation: portrait) and (min-width: 360px) {
@@ -64,7 +141,7 @@ header button {
   header h2 {
     font-size: 24px;
   }
-  header button {
+  header #goToPortfolioBtn {
     margin-top: 24px;
     line-height: 40px;
     font-size: 16px;
@@ -75,7 +152,7 @@ header button {
   header h1, header h2 {
     font-size: 26px;
   }
-  header button {
+  header #goToPortfolioBtn {
     margin-top: 40px;
     line-height: 50px;
     font-size: 20px;
@@ -92,7 +169,7 @@ header button {
   header h1, header h2 {
     font-size: 32px;
   }
-  header button {
+  header #goToPortfolioBtn {
     margin-top: 60px;
     line-height: 60px;
     font-size: 24px;
@@ -104,7 +181,7 @@ header button {
 
 @media (orientation: landscape) {
   header img {
-    height: 80%;
+    height: 60%;
     bottom: 0;
     right: -5%;
   }
@@ -113,7 +190,7 @@ header button {
     left: 7%;
     right: 48%;
   }
-  header button {
+  header #goToPortfolioBtn {
     margin-top: 40px;
   }
 }
@@ -122,7 +199,7 @@ header button {
   header h1, header h2 {
     font-size: 24px;
   }
-  header button {
+  header #goToPortfolioBtn {
     font-size: 16px;
     line-height: 40px;
   }
@@ -141,7 +218,7 @@ header button {
   header h1, header h2 {
     font-size: 34px;
   }
-  header button {
+  header #goToPortfolioBtn {
     margin-top: 80px;
     font-size: 28px;
     line-height: 70px;
@@ -166,7 +243,7 @@ header button {
   header h1, header h2 {
     font-size: 50px;
   }
-  header button {
+  header #goToPortfolioBtn {
     margin-top: 100px;
     font-size: 30px;
     line-height: 80px;
@@ -174,7 +251,7 @@ header button {
     border-width: 2px;
   }
   header img {
-    right: -18%;
+    right: -8%;
     height: 80%;
   }
 }
@@ -192,23 +269,12 @@ header button {
   header h1, header h2 {
     font-size: 60px;
   }
-  header button {
+  header #goToPortfolioBtn {
     line-height: 90px;
   }
   header img {
     right: -8%;
     height: 90%;
-  }
-}
-
-@media (min-width: 1024px) {
-  header button {
-    cursor: pointer;
-    transition: .3s;
-  }
-  header button:hover {
-    background-color: #fff;
-    color: #111;
   }
 }
 
@@ -566,7 +632,6 @@ header button {
     line-height: 40vh;
     opacity: 0;
     transition: 1s;
-    cursor: default;
   }
   .hobby .item:hover p {
     opacity: 1;
@@ -631,6 +696,12 @@ header button {
   background-color: black;
   color: white;
   border: 2px solid white;
+  transition: .3s;
+  cursor: pointer;
+}
+.contact button:hover {
+  color: black;
+  background-color: #fff;
 }
 .contact .socials {
   padding-top: 30px;
@@ -690,12 +761,6 @@ header button {
   .contact button {
     font-size: 20px;
     line-height: 50px;
-    transition: .3s;
-    cursor: pointer;
-  }
-  .contact button:hover {
-    color: black;
-    background-color: #fff;
   }
 }
 footer {
@@ -706,3 +771,24 @@ footer {
   padding: 20px;
   font-size: 20px;
 }
+
+div#arrow {
+  opacity: 0;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 50px;
+  width: 50px;
+  background-color: #000;
+  border-radius: 50%;
+  color: white;
+  font-size: 26px;
+  text-align: center;
+  line-height: 50px;
+  transition: 0.3s;
+}
+
+div#arrow.active {
+  opacity: 1;
+}
+
